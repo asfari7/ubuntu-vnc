@@ -13,9 +13,6 @@ RUN apt update && apt install -y \
     wget \
     && apt clean
 
-# Set password untuk VNC (misalnya 'password', Anda bisa menggantinya dengan password lain)
-RUN mkdir -p /root/.vnc && echo "password" | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd
-
 # Expose ports yang dibutuhkan (VNC dan HTTP untuk akses via browser)
 EXPOSE 5901 6080
 
